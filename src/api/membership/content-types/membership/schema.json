@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "memberships",
+  "info": {
+    "singularName": "membership",
+    "pluralName": "memberships",
+    "displayName": "Membership"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "membership_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "personal",
+        "couple"
+      ]
+    },
+    "isVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "expiry": {
+      "type": "date"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "membership"
+    },
+    "se_name": {
+      "type": "string"
+    },
+    "se_phone": {
+      "type": "string"
+    },
+    "pr_facebook": {
+      "type": "string"
+    },
+    "pr_instagram": {
+      "type": "string"
+    },
+    "se_facebook": {
+      "type": "string"
+    },
+    "se_instagram": {
+      "type": "string"
+    },
+    "pr_profession": {
+      "type": "string"
+    },
+    "se_profession": {
+      "type": "string"
+    },
+    "mode_of_payment": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "cheque",
+        "upi_gpay",
+        "bank_transfer"
+      ]
+    },
+    "transaction_details": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "se_dob": {
+      "type": "date"
+    },
+    "doa": {
+      "type": "datetime"
+    }
+  }
+}
